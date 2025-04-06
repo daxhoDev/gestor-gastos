@@ -101,6 +101,11 @@ input.formulario__boton-agregar:hover, input.formulario__boton-agregar:active {
   padding: 0 0.5rem;
   margin-bottom: 0.8rem;
 }
+
+.gasto:last-of-type {
+  margin: 0;
+}
+
 .gasto .cifra {
   font-weight: 700;
 }
