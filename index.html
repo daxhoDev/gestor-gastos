@@ -12,16 +12,15 @@
     <main class="interfaz">
         <header class="seccion header-principal">
             <h1 class="header-principal__titulo">Gestor de Gastos</h1>
-            <h2 class="header-principal__subtitulo">by daxho</h2>
         </header>
         <section class="seccion-principal">
-            <form class="seccion seccion-dividida seccion-principal__formulario">
+            <form id="formulario" class="seccion seccion-dividida seccion-principal__formulario">
                 <input id="nombre" class="formulario__nombre" type="text" placeholder="Nombre del gasto" required>
                 <input id="cantidad" class="formulario__cantidad" type="number" placeholder="Cantidad" required>
                 <input id="agregar" class="formulario__boton-agregar" type="submit" value="Agregar">
             </form>
             <ul id="lista-gastos" class="seccion seccion-dividida seccion-principal__gastos">
-                <li id="vacio" class="gasto">Aún no hay gastos registrados</li>
+                <li id="vacio" class="gasto">No hay gastos registrados</li>
             </ul>
             <div class="seccion seccion-principal__total-gastado">
                 <p class="total-gastado">Total: <span id="cifra-total">0</span> CUP</p>

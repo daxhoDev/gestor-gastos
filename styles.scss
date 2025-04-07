@@ -1,0 +1,156 @@
+$background-color: rgb(222, 229, 233);
+$button-color: rgb(59, 113, 212);
+
+@mixin selected-input() {
+  &:focus {
+    outline: none;
+    background-color: lighten($background-color, 2);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  font: {
+    family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $background-color;
+}
+
+.interfaz {
+  width: 80%;
+  max-width: 20rem;
+  min-width: 16rem;
+}
+
+.header-principal {
+  text-align: center;
+
+  .header-principal__titulo {
+    font: {
+      size: 1.5rem;
+      weight: 700;
+    }
+  }
+
+  .header-principal__subtitulo {
+    font: {
+      size: 1.2rem;
+      weight: 600;
+    }
+  }
+}
+
+.seccion-principal {
+  background-color: lighten($background-color, 12);
+  border-radius: 0.5em;
+  box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.1);
+}
+
+.seccion {
+  padding: 1rem;
+
+  &-dividida {
+    border-bottom: 1px solid darken($background-color, 10);
+  }
+}
+
+.seccion-principal__formulario {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: 60%;
+  grid-template-rows: repeat(2, 45%);
+}
+
+input {
+  padding: 0.5rem 0.7rem;
+  font: {
+    family: inherit;
+    size: inherit;
+  }
+  border: {
+    width: 1px;
+    style: solid;
+    radius: 0.4em;
+    color: darken($background-color, 10);
+  }
+
+  &.formulario__nombre {
+    grid-column: 1/3;
+    grid-row: 1/1;
+    @include selected-input();
+  }
+
+  &.formulario__cantidad {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    @include selected-input();
+  }
+
+  &.formulario__boton-agregar {
+    background-color: $button-color;
+    color: aliceblue;
+    border: none;
+    grid-column: 2/3;
+    grid-row: 2/3;
+
+    &:hover,
+    &:active {
+      background-color: darken($button-color, 10);
+      cursor: pointer;
+    }
+  }
+}
+
+.gasto {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0 0.5rem;
+  margin-bottom: 0.8rem;
+
+  .cifra {
+    font-weight: 700;
+  }
+}
+
+.eliminar-gasto {
+  text-align: right;
+  height: 1.3rem;
+  border: {
+    radius: 50%;
+    style: none;
+  }
+
+  &:hover,
+  &:active {
+    cursor: pointer;
+    filter: saturate(50%);
+  }
+
+  img {
+    height: 100%;
+  }
+}
+
+.total-gastado {
+  font: {
+    size: 1.5rem;
+    weight: 600;
+  }
+  text-align: center;
+}
